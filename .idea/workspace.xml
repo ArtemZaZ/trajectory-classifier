@@ -277,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576841896581</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Удалил из индекса лишнее">
+      <created>1576841942621</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1576841942621</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -307,7 +314,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Удалил из индекса лишнее, добавил базу данных для линии и файл генерации базы данных для линии" />
-    <option name="LAST_COMMIT_MESSAGE" value="Удалил из индекса лишнее, добавил базу данных для линии и файл генерации базы данных для линии" />
+    <MESSAGE value="Удалил из индекса лишнее" />
+    <option name="LAST_COMMIT_MESSAGE" value="Удалил из индекса лишнее" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
