@@ -5,9 +5,12 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from scipy.stats import mode
 
-PATH = 'done_logarifm.pkl'
-
-data = pd.read_pickle(PATH)
+data = pd.read_pickle('rect.pkl')
 data.info()
-data.hist()
+fig = plt.figure()
+ax = fig.gca(projection='3d')
+for i in range(100):
+    sx, sy, sz, dt = data['sx'][i], data['sy'][i], data['sz'][i], data['dt'][i]
+    color = '#%06x' % random.randint(0, 0xFFFFFF)
+    ax.plot(sx, sy, sz, color=color)
 plt.show()
