@@ -1,3 +1,4 @@
+""" Не валидный скрипт, отброшенный в работе"""
 from math import *
 import random
 from mpl_toolkits.mplot3d import Axes3D  # noqa: F401 unused import

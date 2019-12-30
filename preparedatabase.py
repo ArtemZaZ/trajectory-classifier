@@ -1,3 +1,4 @@
+""" Подготовка БД """
 import random
 from mpl_toolkits.mplot3d import Axes3D  # noqa: F401 unused import
 import numpy as np
@@ -5,7 +6,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from scipy.stats import mode
 
-PATH = 'logarifm.pkl'
+PATH = 'datasets/logarifm.pkl'  # путь до обрабатываемой БД
 PART = 10  # количество частей, на которые делятся перемещения
 
 data = pd.read_pickle(PATH)
@@ -18,22 +19,22 @@ for i in range(100):
     ax.plot(sx, sy, sz, color=color)
 plt.show()
 
-print(data.shape[0])
+# print(data.shape[0])
 
 keys = []
 for i in range(PART):
-    keys.append("modeSx" + str(i))
+    keys.append("modeSx" + str(i))  # создаем список ключей 6*10=60
     keys.append("modeSy" + str(i))
     keys.append("modeSz" + str(i))
     keys.append("maxabsSx" + str(i))
     keys.append("maxabsSy" + str(i))
     keys.append("maxabsSz" + str(i))
 
-attributes = dict.fromkeys(keys)
+attributes = dict.fromkeys(keys)  # bиз списка ключей создаем словарь
 for key in attributes.keys():
     attributes[key] = []
 
-print(attributes)
+# print(attributes)
 
 for i in range(data.shape[0]):
     scale = 1000  # увеличиваем масштаб ф-ии кривизны, чтобы удобнее с ней было работать
@@ -42,7 +43,7 @@ for i in range(data.shape[0]):
     d2sz_dt = np.gradient(np.gradient(data['sz'][i])) * scale  # кривая кривизны для параметра sz
 
     for j in range(PART):
-        thisSliceInd = data.shape[0] * j // PART
+        thisSliceInd = data.shape[0] * j // PART  # вспомогательная переменная, хранящаа значение среза
         d2sx_dt_sl = d2sx_dt[thisSliceInd:thisSliceInd + data.shape[0] // PART]
         d2sy_dt_sl = d2sy_dt[thisSliceInd:thisSliceInd + data.shape[0] // PART]
         d2sz_dt_sl = d2sz_dt[thisSliceInd:thisSliceInd + data.shape[0] // PART]
@@ -60,10 +61,10 @@ for i in range(data.shape[0]):
         attributes["maxabsSz" + str(j)].append(d2sz_dt_sl_maxabs)
 
 for key in attributes.keys():
-    print(len(data['sx']), len(attributes[key]))
-    data[key] = attributes[key]
+    # print(len(data['sx']), len(attributes[key]))
+    data[key] = attributes[key]  # Добавляем в БД значения ключей и параметров
 
 data.info()
-data.to_pickle("done_" + PATH)
+data.to_pickle(PATH[:PATH.rindex('/') + 1] + "done_" + PATH[PATH.rindex('/') + 1:]) # пересохраняем БД c приставкой done
 data.hist(figsize=(16, 8))
 plt.show()
