@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from scipy.stats import mode
 
-PATH = 'datasets/logarifm.pkl'  # путь до обрабатываемой БД
+PATH = 'datasets/v.pkl'  # путь до обрабатываемой БД
 PART = 10  # количество частей, на которые делятся перемещения
 
 data = pd.read_pickle(PATH)
