@@ -1,20 +1,20 @@
 digraph Tree {
 node [shape=box] ;
-0 [label="maxabsSx4 <= 0.279\nentropy = 2.322\nsamples = 3000\nvalue = [604, 576, 604, 618, 598]\nclass = triangle"] ;
-1 [label="modeSx4 <= -0.075\nentropy = 1.0\nsamples = 1222\nvalue = [0, 0, 604, 618, 0]\nclass = triangle"] ;
+0 [label="maxabsSx4 <= 0.279\nentropy = 2.322\nsamples = 4000\nvalue = [801, 784, 808, 815, 792]\nclass = triangle"] ;
+1 [label="modeSx4 <= -0.075\nentropy = 1.0\nsamples = 1623\nvalue = [0, 0, 808, 815, 0]\nclass = triangle"] ;
 0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
-2 [label="entropy = 0.0\nsamples = 618\nvalue = [0, 0, 0, 618, 0]\nclass = triangle"] ;
+2 [label="entropy = 0.0\nsamples = 815\nvalue = [0, 0, 0, 815, 0]\nclass = triangle"] ;
 1 -> 2 ;
-3 [label="entropy = 0.0\nsamples = 604\nvalue = [0, 0, 604, 0, 0]\nclass = line"] ;
+3 [label="entropy = 0.0\nsamples = 808\nvalue = [0, 0, 808, 0, 0]\nclass = line"] ;
 1 -> 3 ;
-4 [label="modeSy1 <= -0.197\nentropy = 1.585\nsamples = 1778\nvalue = [604, 576, 0, 0, 598]\nclass = log"] ;
+4 [label="modeSy1 <= -0.197\nentropy = 1.585\nsamples = 2377\nvalue = [801, 784, 0, 0, 792]\nclass = log"] ;
 0 -> 4 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
-5 [label="entropy = 0.0\nsamples = 604\nvalue = [604, 0, 0, 0, 0]\nclass = log"] ;
+5 [label="entropy = 0.0\nsamples = 801\nvalue = [801, 0, 0, 0, 0]\nclass = log"] ;
 4 -> 5 ;
-6 [label="maxabsSy5 <= 0.101\nentropy = 1.0\nsamples = 1174\nvalue = [0, 576, 0, 0, 598]\nclass = v"] ;
+6 [label="maxabsSy5 <= 0.101\nentropy = 1.0\nsamples = 1576\nvalue = [0, 784, 0, 0, 792]\nclass = v"] ;
 4 -> 6 ;
-7 [label="entropy = 0.0\nsamples = 598\nvalue = [0, 0, 0, 0, 598]\nclass = v"] ;
+7 [label="entropy = 0.0\nsamples = 792\nvalue = [0, 0, 0, 0, 792]\nclass = v"] ;
 6 -> 7 ;
-8 [label="entropy = 0.0\nsamples = 576\nvalue = [0, 576, 0, 0, 0]\nclass = rec"] ;
+8 [label="entropy = 0.0\nsamples = 784\nvalue = [0, 784, 0, 0, 0]\nclass = rec"] ;
 6 -> 8 ;
 }

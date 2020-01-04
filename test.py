@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from scipy.stats import mode
 
-data = pd.read_pickle('rect.pkl')
+data = pd.read_pickle('datasets/v.pkl')
 data.info()
 fig = plt.figure()
 ax = fig.gca(projection='3d')
